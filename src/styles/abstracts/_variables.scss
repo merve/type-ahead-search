@@ -1,0 +1,42 @@
+// #region Colors
+$color-primary: #443f5d;
+$color-black: #000;
+$color-white: #fff;
+$color-text: #383838;
+$color-background: #2f2d4b;
+
+$color-gray-1: #64607a;
+$color-gray-2: #e8e8e8;
+$color-gray-3: #f7f7f7;
+// #endregion
+
+// #region TextColors
+$text-dark: #000;
+$text-dark-secondary: rgba($text-dark, 0.8);
+$text-dark-inactive: rgba($text-dark, 0.4);
+$text-light: #fff;
+$text-light-secondary: rgba($text-light, 0.6);
+$text-light-inactive: rgba($text-light, 0.4);
+// #endregion
+
+// #region ButtonColors
+$button-primary: #006ccd;
+$button-secondary: #fff;
+// #endregion
+
+// #region units
+$popup-border-radius: 3px;
+$card-border-radius: 6px;
+$popup-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+// #endregion
+
+// #region transitions
+$transition-duration: 0.35s;
+$transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+// #endregion
+
+// #notification colors
+$success: #48a134;
+$error: #cc0201;
+$info: #006ccd;
+// #notification colors

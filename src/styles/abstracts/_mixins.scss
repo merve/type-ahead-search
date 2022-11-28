@@ -1,0 +1,47 @@
+// Respond above.
+@mixin fade-in {
+  animation-duration: 0.2s;
+  animation-name: fade-in;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+@mixin skeleton-fade-in {
+  animation-delay: 0.2s;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  animation-name: skeleton-fade-in;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  @keyframes skeleton-fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin skeleton-h3 {
+  display: block;
+  width: 100%;
+  max-width: 100px;
+  height: 13px;
+  margin-bottom: 15px;
+  background-color: $skeleton-background;
+  border-radius: 9px;
+}
+@mixin skeleton-p {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: 9px;
+  background-color: $skeleton-background;
+  border-radius: 9px;
+}

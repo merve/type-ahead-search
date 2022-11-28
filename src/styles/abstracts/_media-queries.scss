@@ -1,0 +1,76 @@
+$breakpoints: (
+  smallest: 410px,
+  xxs: 510px,
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+);
+
+$breakpoints-reverse: (
+  smallest: 409.98px,
+  xxs: 509.98,
+  xs: 575.98px,
+  sm: 767.98px,
+  md: 991.98px,
+  lg: 1199.98px,
+);
+
+// Respond above.
+@mixin above($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// Respond below.
+@mixin below($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints-reverse, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (max-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// Respond above.
+@mixin between($breakpointBottom, $breakpointTop) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints-reverse, $breakpointTop) {
+    @if map-has-key($breakpoints, $breakpointBottom) {
+      // Get the breakpoint value.
+      $breakpoint-value: map-get($breakpoints, $breakpointBottom);
+      $breakpoint-reverse-value: map-get($breakpoints-reverse, $breakpointTop);
+
+      // Write the media query.
+      @media (min-width: $breakpoint-value) and (max-width: $breakpoint-reverse-value) {
+        @content;
+      }
+    }
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}

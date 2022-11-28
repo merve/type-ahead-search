@@ -1,0 +1,88 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/media-queries";
+.search {
+  &__container {
+    border: 3px solid $color-black;
+  }
+  &__input {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: $color-primary;
+    padding: 16px 24px 28px 24px;
+    svg {
+      fill: $color-gray-1;
+    }
+    input {
+      border: none;
+      border-bottom: 2px solid $color-gray-1;
+      width: 60%;
+      background-color: $color-primary;
+      line-height: 1.5;
+      color: $color-white;
+      @include below(md) {
+        width: 100%;
+      }
+      &:focus {
+        outline: none;
+        border: none;
+        border-bottom: 2px solid $color-gray-1;
+      }
+      &::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $color-gray-1;
+        opacity: 1; /* Firefox */
+      }
+
+      &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: $color-gray-1;
+      }
+    }
+  }
+  &-result {
+    max-height: 600px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    padding: 0;
+    margin: 0;
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 8px 16px;
+
+      &:nth-child(odd) {
+        background-color: $color-gray-3;
+      }
+      &:nth-child(even) {
+        background-color: $color-gray-2;
+      }
+    }
+    &__info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 80%;
+      gap: 4px;
+      @include below(lg) {
+        width: 100%;
+      }
+      @include below(md) {
+        grid-template-columns: 1fr;
+      }
+      & > div {
+        font-size: 14px;
+        display: flex;
+        gap: 4px;
+      }
+    }
+    &__name {
+      font-size: 20px;
+    }
+    &__null {
+      padding: 8px 16px;
+    }
+  }
+}
