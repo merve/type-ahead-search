@@ -25,7 +25,7 @@ A responsive and interactive type-ahead search component
 1. #### Clone the repo
 
    ```sh
-   git clone https://github.com/merve/type-ahead-search
+   git clone https://github.com/merve/type-ahead-search.git
    ```
 
 2. #### Install NPM packages
